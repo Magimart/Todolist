@@ -1,0 +1,24 @@
+{
+  "name": "todolists",
+  "version": "1.0.0",
+  "description": "weekly to do lists at work or home",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Magima",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.9.1",
+    "nodemon": "^2.0.15",
+    "parser": "^0.1.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>to do lists</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- <div container fluid> -->
+
+        <div class="box" id="heading"> 
+               <h1><%= listTitle %> </h1> <!-- placeholder changed  -->
+       </div>
+        <hr>
+
+        <div class="box" id="lists"> 
+            <% newListItems.forEach((item) => {  %>
+              <!-- check box form and post delete requests -->
+                <form action="/delete" method="POST">
+                    <div class="item">
+                        <!-- item._id get item that is checked-->
+<input type="checkbox" name="checkbox" value="<%= item._id%>" onchange="this.form.submit()">
+
+                        <p> <%= item.name %> </p>
+                    </div>
+                    <!-- here we have add another tag to enale us tell from wish route is the post being deleted -->
+         <input type="hidden" name="listName" value="<%= listTitle %> "> 
+                </form>
+            <%  });  %>
+     
+             <!-- Post request form-->
+            <form  class="item" action="/"  method="POST">
+               <input type="text" name="newItem" placeholder="New Item" autocomplete="off"> 
+               <button  type="submit" name="list" value="<%= listTitle %>" >+</button>
+            </form>
+        </div>         
+    <!-- </div> -->
+  
+    
+</body>
+</html>
